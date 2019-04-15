@@ -1,58 +1,61 @@
 import React, { Component } from 'react';
-import {createGlobalStyle} from 'styled-components';
-import styled from 'styled-components';
+import {withStyles} from '@material-ui/core';
 import {Route} from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import VisibleHeader from './Containers/VisibleHeader';
 import ListMenu from './Components/Menu/ListMenu';
 import Home from './Components/Home/Home';
 import Users from './Components/Users/Users';
 
-const GlobalStyle = createGlobalStyle`
-  body{
-    margin: 0;
-    padding: 0;
-  }
-`
 
-const ContainerApp = styled.div`
-  margin: 0 auto;
-  width: 1024px;
-  display: flex;
-`
+const drawerWidth = 240;
 
-const ContainerMenu = styled.div`
-  width: 30%;
-  @media (max-width: 960px){
-    display: none
-  }
-`
+const styles = theme =>({
+  root: {
 
-const ContainerMain = styled.div`
-  width: 70%;
-  @media (max-width: 960px){
-    width: 100%
+  },
+  contentCenter:{
+    width: 960,
+    margin: '0 auto',
+    display: 'flex'
+  },
+  contentMenu:{
+    width: drawerWidth,
+    [theme.breakpoints.down('sm')]:{
+      display: 'none'
+    }
+  },
+  contentMain:{
+    width: 960-drawerWidth,
+    [theme.breakpoints.down('sm')]:{
+      width: '100%'
+    }
   }
-`
+})
 
 class App extends Component {
   render() {
+    const {classes} = this.props;
     return (
-      <div>
-        <GlobalStyle/>
+
+        <div className={classes.root}>
+          <CssBaseline/>
           <VisibleHeader/>
-          <ContainerApp>
-            <ContainerMenu>
+          <div className={classes.contentCenter}>
+            <div className={classes.contentMenu}>
               <ListMenu/>
-            </ContainerMenu>
-            <ContainerMain>
+            </div>
+            <div className={classes.contentMain}>
               <Route exact path="/" component={Home}/>
-              <Route path="/users" component={Users}/>
-            </ContainerMain>
-          </ContainerApp>
-      </div>
+              <Route  path="/users" component={Users}/>
+            </div>
+          </div>
+        </div>
+
+      
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

@@ -1,9 +1,12 @@
 import React from 'react';
 import {Drawer} from '@material-ui/core';
+import {withStyles} from '@material-ui/core/styles';
 import ListMenu from '../Menu/ListMenu';
-import { connect } from 'react-redux';
 
-import { closeDrawer } from '../../Actions/ActionDrawer';
+import { withRouter} from 'react-router-dom';
+import { compose } from 'recompose';
+
+
 
 class DrawerMenu extends React.Component{
     constructor(props){
@@ -17,13 +20,6 @@ class DrawerMenu extends React.Component{
 
     
     render(){
-        const dr = (
-            <div>
-                <ListMenu/>
-            </div>
-        )
-
-        console.log(this.props, 2);
         return(
             <Drawer
                 anchor="top"
@@ -35,25 +31,14 @@ class DrawerMenu extends React.Component{
                     onClick={this.handleDrawer}
                     onKeyDown={this.handleDrawer}
                 >
-                {dr}
+                <ListMenu/>
                 </div>
             </Drawer>
         )
     }
 }
 
-const mapStateToProps = (state) =>{
-    const { isOpen } = state.DrawerReducers;
-    return{
-        isOpen: isOpen
-    }
-}
-
-const mapDispatchToProps = dispatch =>{
-    return{
-        closeDrawer: ()=>dispatch(closeDrawer())
-    }
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(DrawerMenu);
+
+export default DrawerMenu;

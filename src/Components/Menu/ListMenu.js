@@ -9,9 +9,7 @@ import { compose } from 'recompose';
 const styles = theme =>({
     root:{
         padding: 0,
-        [theme.breakpoints.down('sm')]:{
-            display: 'none'
-        }
+        
     },
     listItem:{
         backgroundColor: `#ffffff`,
