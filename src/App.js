@@ -18,7 +18,10 @@ const styles = theme =>({
   contentCenter:{
     width: 960,
     margin: '0 auto',
-    display: 'flex'
+    display: 'flex',
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
+  }
   },
   contentMenu:{
     width: drawerWidth,
@@ -28,9 +31,9 @@ const styles = theme =>({
   },
   contentMain:{
     width: 960-drawerWidth,
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('md')]: {
       width: '100%'
-    }
+  }
   }
 })
 
