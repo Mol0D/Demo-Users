@@ -5,10 +5,15 @@ import Input from './Seacrh/Input';
 import SearchButton from './Seacrh/SearchButton';
 import AddButton from './NewUser/AddButton.js';
 import VisibleUserList from '../../Containers/VisibleUserList';
-import User from './User/User';
+import ModalUser from './User/ModalUser';
+
+
 const styles = theme =>({
     root:{
         padding: 5
+    },
+    search:{
+        padding: '0 10px'
     }
     
 })
@@ -19,7 +24,7 @@ class Users extends React.Component{
         const {classes} = this.props;
         return(
             <div className={classes.root}>
-                <div>
+                <div className={classes.search}>
                     <Input/>
                     <SearchButton/>
                     <AddButton/>
@@ -27,6 +32,7 @@ class Users extends React.Component{
                 <div>
                     <VisibleUserList/>
                 </div>
+                <ModalUser/>
             </div>
         )
     }

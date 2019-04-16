@@ -3,9 +3,9 @@ import UsersList from '../Components/Users/UsersList';
 import { getUsers } from '../Actions/ActionsUsers';
 
 const mapStateToProps = (state) =>{
-    console.log(state);
     return{
-        users: state.usersReducers.users
+        users: state.usersReducers.users,
+        isLoading: state.usersReducers.isLoading
     }
 }
 

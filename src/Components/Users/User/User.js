@@ -22,7 +22,7 @@ class User extends React.Component{
         const {name, classes} = this.props;
         return(
             <Paper className={classes.root}>
-                <Typography variant="h4" className={classes.text} >
+                <Typography variant="h5" className={classes.text} >
                     {name}
                 </Typography>
                 <DeleteButton/>

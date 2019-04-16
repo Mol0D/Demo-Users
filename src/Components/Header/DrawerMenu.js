@@ -1,12 +1,6 @@
 import React from 'react';
 import {Drawer} from '@material-ui/core';
-import {withStyles} from '@material-ui/core/styles';
 import ListMenu from '../Menu/ListMenu';
-
-import { withRouter} from 'react-router-dom';
-import { compose } from 'recompose';
-
-
 
 class DrawerMenu extends React.Component{
     constructor(props){
