@@ -33,7 +33,6 @@ const styles = theme =>({
 
 const Header = (props) =>{
     const { classes, propOpenDrawer } = props;
-    console.log(props);
     const openDrawer = () =>{
         propOpenDrawer();
     }
