@@ -4,7 +4,8 @@ import {withStyles} from '@material-ui/core/styles'
 import Input from './Seacrh/Input';
 import SearchButton from './Seacrh/SearchButton';
 import AddButton from './NewUser/AddButton.js';
-
+import VisibleUserList from '../../Containers/VisibleUserList';
+import User from './User/User';
 const styles = theme =>({
     root:{
         padding: 5
@@ -22,6 +23,9 @@ class Users extends React.Component{
                     <Input/>
                     <SearchButton/>
                     <AddButton/>
+                </div>
+                <div>
+                    <VisibleUserList/>
                 </div>
             </div>
         )
