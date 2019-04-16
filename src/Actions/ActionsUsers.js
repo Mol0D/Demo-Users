@@ -28,7 +28,6 @@ export const getUsersSuccess = (users) =>{
 
 export const getUsers = () =>{
     return dispatch =>{
-        console.log(3);
         dispatch(getUsersIsLoading());
         return fetch(`https://my-json-server.typicode.com/Mol0D/Demo-Users/users`)
             .then(response => response.json())

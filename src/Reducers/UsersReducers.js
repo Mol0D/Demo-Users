@@ -12,7 +12,6 @@ const usersReducers = (state = initialState, action)=>{
     switch(action.type){
         
         case GET_USERS_IS_LOADING:
-        console.log(4);
             return Object.assign({}, state, {
                 isLoading: true,
                 isError: false,
@@ -25,7 +24,6 @@ const usersReducers = (state = initialState, action)=>{
                 textError: action.payload.error
             })
         case GET_USERS_SUCCESS:
-            console.log(2, state);
             return Object.assign({}, state, {
                 isLoading: false,
                 isError: false,

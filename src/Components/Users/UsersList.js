@@ -1,24 +1,37 @@
 import React from 'react';
 import User from './User/User';
-import getUsers from '../../Actions/ActionsUsers';
-class UsersList extends React.Component{
-    constructor(props){
-        super(props);
+import {CircularProgress} from '@material-ui/core';
+import {withStyles} from '@material-ui/core/styles'
+
+const styles =({
+    spin:{
+        margin: '100px auto 0',
+        width: 40
     }
+})
+
+class UsersList extends React.Component{
+    
     componentDidMount(){
         this.props.propGetUsers();
     }
     render(){
-        console.log(this.props);
+        const {users, isLoading, classes} = this.props;
         return(
             <div>
-                {this.props.users.map((user, i)=>{
-                    return <User key={i} name={user.name}/>
-                })}
+                {isLoading ? 
+                    <div className={classes.spin}>
+                        <CircularProgress/>
+                    </div>
+                :
+                    users.map((user, i)=>{
+                        return <User key={i} name={user.name}/>
+                    })
+                }  
             </div>
         )
     }
     
 }
 
-export default UsersList;
+export default withStyles(styles)(UsersList);
