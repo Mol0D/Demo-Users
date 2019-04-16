@@ -4,7 +4,8 @@ import {TextField} from '@material-ui/core';
 
 const styles = {
     root:{
-        margin: 10
+        marginTop: 10,
+        width: 350
     }
 }
 

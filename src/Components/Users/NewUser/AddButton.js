@@ -1,11 +1,11 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import {Button, Tooltip} from '@material-ui/core';
-import SearchIcon from './SearchIcon';
+import AddUserIcon from './AddUserIcon';
 const styles= () =>({
     button:{
+        float: 'right',
         marginTop: 10,
-        marginLeft: 7,
         height: 56,
         padding: 0,
         boxShadow: 'none',
@@ -20,17 +20,17 @@ const styles= () =>({
 })
 
 
-class ButtonSearch extends React.Component{
+class AddButton extends React.Component{
     render(){
         const {classes} = this.props;
         return(
-            <Tooltip title="Search">
+            <Tooltip title="Add User">
                 <Button variant="contained" className={classes.button} size="large">
-                    <SearchIcon/>
+                    <AddUserIcon/>
                 </Button>
             </Tooltip>
         )
     }
 }
 
-export default withStyles(styles)(ButtonSearch);
+export default withStyles(styles)(AddButton);
