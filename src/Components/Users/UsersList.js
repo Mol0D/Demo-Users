@@ -25,7 +25,7 @@ class UsersList extends React.Component{
                     </div>
                 :
                     users.map((user, i)=>{
-                        return <User key={i} name={user.name}/>
+                        return <User key={i} user={user}/>
                     })
                 }  
             </div>
