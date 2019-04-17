@@ -41,23 +41,20 @@ const styles =({
 
 
 class ModalUser extends React.Component{
+    
     render(){
-        const {classes} = this.props;
+        const {user, classes} = this.props;
         return(
-            <div>
-            <Modal
-                open={true}
-            >
                 <div  className={classes.modal}>
                     <Avatar className={classes.avatar} sizes="500">LG</Avatar>
                     <Typography variant="h5">
-                        Leanne Graham
+                        {user.name}
                     </Typography>
                     <Typography variant="caption" gutterBottom>
-                        Number: +1-770-736-8031
+                        Number: +{user.phone}
                     </Typography>
                     <Typography variant="caption" gutterBottom>
-                        Email: Sincere@april.biz
+                        Email: {user.email}
                     </Typography>
                     <div className={classes.info}>
                         <div className={classes.userInfo}>
@@ -65,7 +62,7 @@ class ModalUser extends React.Component{
                                 Country
                             </Typography>
                             <Typography variant="subtitle2" gutterBottom>
-                                Republic of Ireland
+                                {user.country}
                             </Typography>
                         </div>
                         <div className={classes.userInfo}>
@@ -73,14 +70,13 @@ class ModalUser extends React.Component{
                                 City
                             </Typography>
                             <Typography variant="subtitle2" gutterBottom>
-                                Dublin
+                                {user.city}
                             </Typography>
                             
                         </div>
                     </div>
                 </div>
-            </Modal>
-            </div>
+            
         )
     }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import {Paper, Typography} from '@material-ui/core';
+import {Paper, Typography, Modal} from '@material-ui/core';
 import DeleteButton from './DeleteButton';
+import ModalUser from './ModalUser';
 
 const styles =({
     root:{
@@ -18,15 +19,41 @@ const styles =({
 
 
 class User extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            open: false
+        }
+        this.handleOpen= this.handleOpen.bind(this);
+        this.handleClose=this.handleClose.bind(this);
+    }
+
+    handleOpen(){
+        this.setState({open: true})
+    }
+
+    handleClose(){
+        this.setState({open: false})
+    }
+
     render(){
-        const {name, classes} = this.props;
+        const {user, classes} = this.props;
         return(
+            <div>
             <Paper className={classes.root}>
-                <Typography variant="h5" className={classes.text} >
-                    {name}
+                <Typography variant="h5" className={classes.text} onClick={this.handleOpen}>
+                    {user.name}
                 </Typography>
                 <DeleteButton/>
             </Paper>
+               <Modal 
+                open={this.state.open}
+                onClose={this.handleClose}
+                >
+                   <ModalUser user={user}/>
+               </Modal>
+            </div>
+            
         )
     }
 }

@@ -32,7 +32,6 @@ class Users extends React.Component{
                 <div>
                     <VisibleUserList/>
                 </div>
-                <ModalUser/>
             </div>
         )
     }
