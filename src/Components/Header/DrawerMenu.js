@@ -2,34 +2,27 @@ import React from 'react';
 import {Drawer} from '@material-ui/core';
 import ListMenu from '../Menu/ListMenu';
 
-class DrawerMenu extends React.Component{
-    constructor(props){
-        super(props);
-        this.handleDrawer = this.handleDrawer.bind(this);
+const DrawerMenu = props =>{
+
+    const handleDrawer = () => {
+        props.closeDrawer();
     }
 
-    handleDrawer(){
-        this.props.closeDrawer();
-    }
-
-    
-    render(){
-        return(
-            <Drawer
-                anchor="top"
-                open={this.props.isOpen}
-                onClose={this.handleDrawer}
+    return(
+        <Drawer
+            anchor="top"
+            open={props.isOpen}
+            onClose={handleDrawer}
+        >
+            <div tabIndex={0}
+                role="button"
+                onClick={handleDrawer}
+                onKeyDown={handleDrawer}
             >
-                <div tabIndex={0}
-                    role="button"
-                    onClick={this.handleDrawer}
-                    onKeyDown={this.handleDrawer}
-                >
                 <ListMenu/>
-                </div>
-            </Drawer>
-        )
-    }
+            </div>
+        </Drawer>
+    )
 }
 
 

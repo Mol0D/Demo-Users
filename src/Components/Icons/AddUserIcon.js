@@ -1,6 +1,6 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import {ReactComponent as Add} from '../../../img/svg/addUser.svg';
+import {ReactComponent as Add} from '../../img/svg/addUser.svg';
 
 const AddUserIcon = props =>{
     return(

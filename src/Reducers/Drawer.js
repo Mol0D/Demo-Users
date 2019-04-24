@@ -1,4 +1,4 @@
-import { OPEN_DRAWER, CLOSE_DRAWER } from '../Actions/ActionDrawer';
+import { OPEN_DRAWER, CLOSE_DRAWER } from '../Actions/Drawer';
 
 const initialState = {
     isOpen: false

@@ -16,7 +16,7 @@ class UsersList extends React.Component{
         this.props.propGetUsers();
     }
     render(){
-        const {users, isLoading, classes} = this.props;
+        const {users, isLoading, classes, propDeleteUsers} = this.props;
         return(
             <div>
                 {isLoading ? 
@@ -24,9 +24,13 @@ class UsersList extends React.Component{
                         <CircularProgress/>
                     </div>
                 :
-                    users.map((user, i)=>{
-                        return <User key={i} user={user}/>
-                    })
+                    <div>
+                        <p>Total result: {users.length}</p>
+                        {users.map((user, i)=>{
+                        return <User key={i} user={user} propDeleteUsers={propDeleteUsers}/>
+                    })}
+                    </div>
+                    
                 }  
             </div>
         )
