@@ -1,13 +1,13 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import {ReactComponent as Delete} from '../../../img/svg/delete.svg';
+import {ReactComponent as Search} from '../../img/svg/search.svg';
 
-const DeleteIcon = props =>{
+const SearchIcon = props =>{
     return(
         <SvgIcon {...props} viewBox="0 0 48 48">
-            <Delete/>
+            <Search/>
         </SvgIcon>
     )
 }
 
-export default DeleteIcon;
+export default SearchIcon;

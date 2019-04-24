@@ -1,10 +1,10 @@
 import React from 'react';
-import {ReactComponent as Users} from '../../img/svg/users.svg';
+import {ReactComponent as UsersLogo} from '../../img/svg/users.svg';
 import SvgIcon from '@material-ui/core/SvgIcon';
 const UsersIcon = props =>{
     return(
-        <SvgIcon {...props}>
-            <Users/>
+        <SvgIcon {...props} viewBox="0 0 24 24">
+            <UsersLogo/>
         </SvgIcon>
     )
 }

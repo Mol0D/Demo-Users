@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import VisibleHeader from './Containers/VisibleHeader';
 import ListMenu from './Components/Menu/ListMenu';
 import Home from './Components/Home/Home';
-import Users from './Components/Users/Users';
+import VisibleUsers from './Containers/VisibleUsers';
 
 
 const drawerWidth = 240;
@@ -51,7 +51,7 @@ class App extends Component {
             </div>
             <div className={classes.contentMain}>
               <Route exact path="/" component={Home}/>
-              <Route  path="/users" component={Users}/>
+              <Route  path="/users" component={VisibleUsers}/>
             </div>
           </div>
         </div>

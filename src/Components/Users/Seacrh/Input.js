@@ -9,18 +9,22 @@ const styles = {
     }
 }
 
-class Input extends React.Component{
-    render(){
-        const {classes} = this.props;
+const Input = props =>{
+        const {classes, input, label, meta: {touched, error}, ...custom} = props;
         return(
             <TextField
                 id="standard-dense"
                 label="Search"
                 variant="outlined"
                 className={classes.root}
+                hinttext={label}
+                floatinglabeltext={label}
+                errortext={toString(touched && error)}
+                {...input}
+                {...custom}
             />
         )
-    }
+        
 }
 
 export default withStyles(styles)(Input);
